@@ -1,4 +1,4 @@
-package com.mann.controller;
+package com.mann.dto;
 
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
