@@ -1,5 +1,6 @@
 package com.mann.controller;
 
+import com.mann.dto.Department;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.boot.SpringApplication;
@@ -51,6 +52,28 @@ public class RestClient {
     public Mono<Employee> updateEmployees(@PathVariable int employeesId, @RequestBody Employee request) {
         return webClient.put().uri("/employeesId/" + employeesId).syncBody(request).retrieve()
                 .bodyToMono(Employee.class);
+    }
+
+
+    @GetMapping("/departments")
+    public Flux<Department> trackAllDepartment() {
+        return  webClient.get().uri("/departments").retrieve().bodyToFlux(Department.class);
+    }
+
+    @GetMapping("/departments/{departmentsId}")
+    public Mono<Department> getDepartmentById(@PathVariable int departmentsId) {
+        return webClient.get().uri("/departments/" + departmentsId).retrieve().bodyToMono(Department.class);
+    }
+
+    @DeleteMapping("/departments/{departmentsId}")
+    public Mono<String> deleteDepartment(@PathVariable int employeesId) {
+        return webClient.delete().uri("/departments/" + employeesId).retrieve().bodyToMono(String.class);
+    }
+
+    @PutMapping("/departments/{departmentsId}")
+    public Mono<Department> updateDepartment(@PathVariable int departmentsId, @RequestBody Department request) {
+        return webClient.put().uri("/departmentsId/" + departmentsId).syncBody(request).retrieve()
+                .bodyToMono(Department.class);
     }
 
     public static void main(String[] args) {
