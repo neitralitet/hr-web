@@ -66,8 +66,8 @@ public class RestClient {
     }
 
     @DeleteMapping("/departments/{departmentsId}")
-    public Mono<String> deleteDepartment(@PathVariable int employeesId) {
-        return webClient.delete().uri("/departments/" + employeesId).retrieve().bodyToMono(String.class);
+    public Mono<String> deleteDepartment(@PathVariable int departmentsId) {
+        return webClient.delete().uri("/departments/" + departmentsId).retrieve().bodyToMono(String.class);
     }
 
     @PutMapping("/departments/{departmentsId}")
