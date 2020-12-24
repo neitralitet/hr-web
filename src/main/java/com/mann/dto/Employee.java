@@ -21,6 +21,18 @@ public class Employee implements Serializable {
 
     private Integer id;
 
+    private Integer departmentId;
+
+    private String name;
+
+    private String secondName;
+
+    private String patronymicName;
+
+    private LocalDate dateOfBirth;
+
+    private Long salary;
+
     public static long getSerialVersionUID() {
         return serialVersionUID;
     }
@@ -81,17 +93,7 @@ public class Employee implements Serializable {
         this.salary = salary;
     }
 
-    private Integer departmentId;
 
-    private String name;
-
-    private String secondName;
-
-    private String patronymicName;
-
-    private LocalDate dateOfBirth;
-
-    private Long salary;
 }
 
 
