@@ -1,11 +1,16 @@
 package com.mann.dto;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import lombok.Data;
+
 import java.io.Serializable;
 import java.util.Set;
 
 /**
  * @author Vladimir Mann
  */
+@Data
+@JsonAutoDetect
 public class Department implements Serializable {
     private static final long serialVersionUID = 1L;
     private Integer id;
